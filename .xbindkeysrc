@@ -1,0 +1,25 @@
+#increase volume
+"pactl set-sink-volume @DEFAULT_SINK@ +10%"
+    XF86WLAN
+
+#decrease volume
+"pactl set-sink-volume @DEFAULT_SINK@ -10%"
+    XF86Display
+
+#mute volume
+"pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    XF86AudioMute
+
+#inc backlight
+"xbacklight -inc 10"
+    XF86MonBrightnessUp
+
+#dec backlight
+"xbacklight -dec 10"
+    XF86MonBrightnessDown
+
+"./.config/bspwm/bspwmrcFull && sleep .25 && ./.config/bspwm/bspwmrcFull"
+    XF86LaunchA
+
+"./.config/bspwm/bspwmrc"
+    XF86Explorer

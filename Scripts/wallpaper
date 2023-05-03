@@ -1,0 +1,27 @@
+#!/usr/bin/bash
+
+images=("citybuilding.png", "firewatch_purple.png", "house1.png", "road.png",
+          "aesthetic_deer.png", "rebellious_tower.png", "boat.jpg", "rain_world1.png", "cat_leaves.png",
+          "rain_world2.png", "space_saturn.png", "paintedCloud.png", "island.png", "redsky.jpg", "tinyhouse.jpg",
+          "hill.jpg", "nighthill.jpg", "skytrain.jpg", "lake.png")
+
+c=$(cat ~/.fehbg)
+c="${c#*\'}"
+c="${c%\'*}"
+c="${c#*\/}"
+c="${c#*\/}"
+c="${c#*\/}"
+c="${c#*\/}"
+
+length=${#images[@]}
+
+for (( i=0; i<length; i++ ));
+do
+    if [[ "${images[$i]%\,*}" == "$c" ]]; then
+        x=$(($i+1))
+        if [ $x -eq $length ]; then
+            x=0
+        fi
+        feh -z --bg-fill ~/wallpapers/"${images[$x]%\,*}"
+    fi
+done
